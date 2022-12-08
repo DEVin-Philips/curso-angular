@@ -2,7 +2,10 @@
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col" *ngFor="let produto of produtos">
+        <div class="col"
+          *ngFor="let produto of produtos"
+          (click)="navegar(produto.id)"
+          >
           <div class="card shadow-sm">
             <img [src]="produto.urlImagem" height="225">
             <div class="card-body">

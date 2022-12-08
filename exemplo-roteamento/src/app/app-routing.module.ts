@@ -8,8 +8,8 @@ import { SobreComponent } from './paginas/sobre/sobre.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
-    pathMatch: 'full'
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
     path: 'inicio',
@@ -17,23 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'sobre',
-    component: SobreComponent,
-    children: [
-      {
-        path: ':nome',
-        component: SobreComponent,
-      },
-      {
-        path: ':nome/:categoria',
-        component: SobreComponent
-      },
-      {
-        path: ':nome/:categoria/ano',
-        component: SobreComponent
-      }
-    ]
+    component: SobreComponent
   },
-
   {
     path: 'contato',
     component: ContatoComponent
