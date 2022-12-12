@@ -13,6 +13,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { ProdutosModule } from './pages/produtos/produtos.module';
 import { BloqueadorGuard } from './guards/bloqueador.guard';
+import { AboutModule } from './pages/about/about.module';
 
 
 const ROUTES: Routes = [
@@ -41,10 +42,7 @@ const ROUTES: Routes = [
       BloqueadorGuard
     ],
   },
-  {
-    path: 'sobre/:produto',
-    component: AboutComponent
-  },
+
   {
     path: 'contato',
     component: ContactComponent,
@@ -55,6 +53,11 @@ const ROUTES: Routes = [
   {
     path: 'contato/:id',
     component: ContactComponent
+  },
+  {
+    path: 'produtos',
+    loadChildren: () => import('./pages/produtos/produtos.module')
+      .then((modulo) => modulo.ProdutosModule)
   },
   {
     path: '**',
@@ -69,13 +72,12 @@ const ROUTES: Routes = [
     ListComponent,
     LoginComponent,
     HomeComponent,
-    AboutComponent,
     ContactComponent,
     NotfoundComponent,
   ],
   imports: [
     BrowserModule,
-    ProdutosModule,
+    AboutModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],

@@ -8,7 +8,7 @@ import { ProdutoListarComponent } from './produto-listar/produto-listar.componen
 
 const routes: Routes = [
   {
-    path: 'produtos',
+    path: '',
     children: [
       {
         path: '',
