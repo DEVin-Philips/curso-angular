@@ -4,5 +4,6 @@ export interface INotificacao {
   descricao: string;
   tempoPublicacao: string;
   imagem: string;
-  lido: boolean;
+  lido?: boolean;
+  id?: number;
 }
